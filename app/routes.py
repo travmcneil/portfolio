@@ -6,10 +6,9 @@ from app.forms import LoginForm, RegistrationForm
 from app.models import User, Roles
 
 
-
 @app.route('/')
 @app.route('/index')
-@login_required
+# @login_required
 def index():
     posts = [
         {
@@ -62,6 +61,8 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
+
 @app.route('/blog')
+# @login_required
 def blog():
-    return render_template('blog.html')
+    return render_template('blog.html', title="Blog")
