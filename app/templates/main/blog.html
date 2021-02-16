@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Blog</h1>
+{% if current_user.role == 'superuser' %}
+<button class="btn btn-primary">Create New Post</button>
+{% endif %}
+<p>
+    Here is where my list of blogs will be posted.  I need to have a section that I can creat new blogs.
+    This place will have a new blog posted periodically.  The blog will contain more of an everyday information.  
+    It will be more than just programming.
+</p>
+{% endblock %}

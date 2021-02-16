@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hello and welcome to Travis's Portfolio page.</h1>
+
+<p>Please keep in mind this a new project and it is a continous project</p>
+<p>This will be a page for me to showcase some of the things I am working on.</p>
+<p>To find out what I most recently am working on, checkout my blog page.</p>
+<p>Right now this page will have a to do list.</p>
+<ul>
+    {% if current_user.role == 'superuser' %}
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#todoModal">
+        Add to to do lit
+    </button>
+    {% endif %}
+    <li>Create a to do list model</li>
+    <li>Create Blog Page with working post</li>
+    <li>Blog: new post will bring up a modal</li>
+    <li>Improve vicuals</li>
+    <li>Maybe make this todo list a flask app with checkboxes</li>
+    <li>Hopefully post this on Heroku</li>
+</ul>
+
+
+<!-- Modal -->
+<div class="modal fade" id="todoModal" tabindex="-1" role="dialog" aria-labelledby="todoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

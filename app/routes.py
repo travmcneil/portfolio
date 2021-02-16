@@ -20,7 +20,7 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
     ]
-    return render_template('index.html', title='Home', posts=posts)
+    return render_template('main/index.html', title='Home', posts=posts)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -38,7 +38,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
-    return render_template('login.html', title='Sign In', form=form)
+    return render_template('main/login.html', title='Sign In', form=form)
 
 
 @app.route('/logout')
@@ -55,14 +55,15 @@ def register():
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data)
         user.set_password(form.password.data)
+        user.role = Roles.query.get(1)
         db.session.add(user)
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
+    return render_template('main/register.html', title='Register', form=form)
 
 
 @app.route('/blog')
 # @login_required
 def blog():
-    return render_template('blog.html', title="Blog")
+    return render_template('main/blog.html', title="Blog")
