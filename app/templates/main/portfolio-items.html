@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Introduciton -->
+<section class="intro" id="home">
+    <h1 class="section-title section-title-intro">
+        Hi, I am <strong>Steven McNeil</strong>
+    </h1>
+    <p class="section-subtitle section-subtitle-intro">full stack developer</p>
+    <img src="{{url_for('static', filename='images/dev.png')}}" alt="A picture of Me" class="intro-img">
+</section>
+
+{% endblock %}

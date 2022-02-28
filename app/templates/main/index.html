@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Introduciton -->
+<section class="intro" id="home">
+    <h1 class="section-title section-title-intro">
+        Hi, I am <strong>Steven McNeil</strong>
+    </h1>
+    <p class="section-subtitle section-subtitle-intro">full stack developer</p>
+    <img src="{{url_for('static', filename='images/dev.png')}}" alt="A picture of Me" class="intro-img">
+</section>
+
+<!-- My Service -->
+<section class="my-services" id="services">
+    <h2 class="section-title section-title-services">What I do</h2>
+    <div class="services">
+        <div class="service">
+            <h3>Design + Development</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim tortor. 
+                Est ullamcorper eget nulla facilisi etiam. Varius sit amet mattis vulputate enim. 
+                Id neque aliquam vestibulum morbi blandit cursus risus at ultrices. Sed sed risus 
+                pretium quam vulputate dignissim. Posuere lorem ipsum dolor sit amet consectetur. 
+                Enim neque volutpat ac tincidunt vitae semper quis. Tempor nec feugiat nisl pretium 
+                fusce id velit ut. Fusce id velit ut tortor pretium viverra suspendisse potenti.</p>
+        </div><!-- / service -->
+        <div class="service">
+            <h3>Design + Development</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim tortor. 
+                Est ullamcorper eget nulla facilisi etiam. Varius sit amet mattis vulputate enim. 
+                Id neque aliquam vestibulum morbi blandit cursus risus at ultrices. Sed sed risus 
+                pretium quam vulputate dignissim. Posuere lorem ipsum dolor sit amet consectetur. 
+                Enim neque volutpat ac tincidunt vitae semper quis. Tempor nec feugiat nisl pretium 
+                fusce id velit ut. Fusce id velit ut tortor pretium viverra suspendisse potenti.</p>
+        </div><!-- / service -->
+        <div class="service">
+            <h3>Design + Development</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim tortor. 
+                Est ullamcorper eget nulla facilisi etiam. Varius sit amet mattis vulputate enim. 
+                Id neque aliquam vestibulum morbi blandit cursus risus at ultrices. Sed sed risus 
+                pretium quam vulputate dignissim. Posuere lorem ipsum dolor sit amet consectetur. 
+                Enim neque volutpat ac tincidunt vitae semper quis. Tempor nec feugiat nisl pretium 
+                fusce id velit ut. Fusce id velit ut tortor pretium viverra suspendisse potenti.</p>
+        </div><!-- / service -->
+    </div><!-- / services -->
+    <a href="#work" class="btn">My Work</a>
+</section>
+
+<!-- About Me -->
+<section class="about-me" id="about">
+    <h2 class="section-title section-title-about">Who I Am</h2>
+    <p class="section-subtitle section-subtitle-about">Designer & developer</p>
+    <div class="about-me-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim tortor. 
+            Est ullamcorper eget nulla facilisi etiam. Varius sit amet mattis vulputate enim. 
+        </p>
+        <p>
+            Id neque aliquam vestibulum morbi blandit cursus risus at ultrices. Sed sed risus 
+            pretium quam vulputate dignissim. Posuere lorem ipsum dolor sit amet consectetur. 
+            Enim neque volutpat ac tincidunt vitae semper quis. Tempor nec feugiat nisl pretium 
+            fusce id velit ut. Fusce id velit ut tortor pretium viverra suspendisse potenti.
+        </p>
+    </div>
+    <img src="{{url_for('static', filename='images/dev.png')}}" alt="A picture of Me" class="about-me-img">
+</section>
+
+<!-- My Work -->
+<section class="my-work" id="work">
+    <h2 class="section-title section-title-work">My Work</h2>
+    <p class="section-subtitle section-subtitle-work">A selection of my projects</p>
+    <div class="portfolio">
+        <!-- Portfolio item 01 -->
+        <a href="#" class="portfolio-item">
+            <img src="{{url_for('static', filename='images/portfolio.jpg')}}" alt="" class="portfolio-img">
+        </a>
+        <!-- Portfolio item 02 -->
+        <a href="#" class="portfolio-item">
+            <img src="{{url_for('static', filename='images/portfolio.jpg')}}" alt="" class="portfolio-img">
+        </a>
+        <!-- Portfolio item 03 -->
+        <a href="#" class="portfolio-item">
+            <img src="{{url_for('static', filename='images/portfolio.jpg')}}" alt="" class="portfolio-img">
+        </a>
+        <!-- Portfolio item 04 -->
+        <a href="#" class="portfolio-item">
+            <img src="{{url_for('static', filename='images/portfolio.jpg')}}" alt="" class="portfolio-img">
+        </a>
+        <!-- Portfolio item 05 -->
+        <a href="#" class="portfolio-item">
+            <img src="{{url_for('static', filename='images/portfolio.jpg')}}" alt="" class="portfolio-img">
+        </a>
+        <!-- Portfolio item 06 -->
+        <a href="#" class="portfolio-item">
+            <img src="{{url_for('static', filename='images/portfolio.jpg')}}" alt="" class="portfolio-img">
+        </a>
+    </div>
+</section>
+{% endblock %}

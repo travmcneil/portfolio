@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Steven's Portfolio</title>
+        <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css.map">
+        <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        {%- block styles %}
+        {{ bootstrap.load_css() }}
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;900&family=Source+Sans+Pro:wght@300;900&display=swap">
+        {%- endblock styles %}
+        {% endblock %}
+    </head>
+    <body>
+        {%- block navbar %}
+        <header>
+            <div class="logo">
+                <img src="{{url_for('static', filename='images/logo.png')}}" alt="" class="intro-img">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">My Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#work" class="nav-link">My Work</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        {% endblock navbar %}
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ messages }}
+        </div>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+        {% block footer %}
+        <!-- footer -->
+        <footer class="footer">
+            <a href="mailto:travmcneil@gmail.com" class="footer-link">travmcneil@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list-item"><a class="social-list-link" href="#"><i class="fa-brands fa-github"></i></a></li>
+                <li class="social-list-item"><a class="social-list-link" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li class="social-list-item"><a class="social-list-link" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            </ul>
+        </footer>
+        {% endblock %}
+        {%- block scripts %}
+            {{ bootstrap.load_js() }}
+            <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.js"
+                integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+                crossorigin="anonymous"></script>
+            {%- endblock scripts %}
+    </body>
+</html>
